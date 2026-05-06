@@ -307,7 +307,7 @@ def reward_soft_constraint(
     # import openai
     # client = openai.OpenAI(api_key="YOUR_API_KEY")
     # completion = client.chat.completions.create(
-    #     model="gpt-4.1-mini",
+    #     model="gpt-4.1-nano",
     #     messages=[{"role": "user", "content": judge_prompt}],
     #     temperature=0.0,
     # )
@@ -365,8 +365,8 @@ def _simulate_judge(response: str) -> Tuple[float, str]:
 def compute_total_reward(
     response: str,
     constitution: Dict[str, dict],
-    hard_weight: float = 0.6,
-    soft_weight: float = 0.4,
+    hard_weight: float = 0.3,
+    soft_weight: float = 0.7,
     verbose: bool = True,
 ) -> Dict[str, float]:
     """

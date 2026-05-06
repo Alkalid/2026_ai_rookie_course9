@@ -12,6 +12,7 @@ dependencies = [
     "datasets>=2.18.0",
     "matplotlib>=3.7.0",
     "accelerate>=0.30.0",
+    "openai>=1.0.0",
 ]
 
 [tool.uv]
