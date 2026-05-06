@@ -247,16 +247,14 @@ def run_grpo_training(
         learning_rate=1e-5,
         logging_steps=1,
         num_generations=4,          
-        max_new_tokens=512,
+        max_completion_length=512,
         temperature=0.7,            # TODO：嘗試改為 0.9 或 0.5
-        kl_coef=0.05,               # TODO：嘗試改為 0.1 或 0.01
         bf16=True,
     )
 
     trainer = GRPOTrainer(
         model=model,
-        tokenizer=tokenizer,
-        config=config,
+        args=config,
         train_dataset=dataset,
         reward_funcs=safety_reward_function,
     )
@@ -373,9 +371,7 @@ def main():
         print("   或使用 Google Colab / Kaggle 等免費 GPU 環境。")
         return
 
-    print(f"\n🖥️  GPU：{torch.cuda.get_device_name(0)}")
-    mem_gb = torch.cuda.get_device_properties(0).total_mem / (1024 ** 3)
-    print(f"   顯存：{mem_gb:.1f} GB")
+    
 
     # ---- Lab 1：顯示啟用的 AI 憲法 ----
     constitution = get_active_constitution(ACTIVE_ROUTE)
