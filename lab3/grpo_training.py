@@ -263,7 +263,7 @@ def run_grpo_training(
     print("-" * 60)
     print("觀察重點：")
     print("  - reward/mean ：平均 reward，應該逐步上升")
-    print("  - kl          ：KL 散度，不要太大（> 10 表示偏移過劇）")
+    print("  - reward_std ：KL 散度，不要太大（> 10 表示偏移過劇）")
     print("  - loss        ：Policy loss，應該逐步下降")
     print("-" * 60)
 
