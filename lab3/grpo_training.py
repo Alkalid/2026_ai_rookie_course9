@@ -307,10 +307,10 @@ def plot_training_curves(trainer, save_path: str = "grpo_training_curves.png"):
 
         if "reward/mean" in entry:
             steps.append(step)
-            rewards.append(entry["reward/mean"])
+            rewards.append(entry["reward"])
 
-        if "kl" in entry:
-            kls.append((step, entry["kl"]))
+        if "reward_std" in entry:
+            kls.append((step, entry["reward_std"]))
 
         if "loss" in entry:
             losses.append((step, entry["loss"]))
