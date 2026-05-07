@@ -197,7 +197,7 @@ python -m lab3.grpo_training
 **Q1: CUDA out of memory 怎麼辦？**
 A: 依序嘗試：
 1. `per_device_train_batch_size=1`（已是預設）
-2. `num_generations` 從 2 降到 2（已是預設下限，再降會關掉 group baseline）
+2. `num_generations` 從 4 降到 2（已是預設下限，再降會關掉 group baseline）
 3. `max_new_tokens` 從 256 降到 128
 4. LoRA `r` 從 8 降到 4
 5. 改用更小的基底模型（例如 Qwen2.5-1.5B-Instruct）
